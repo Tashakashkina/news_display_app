@@ -21,3 +21,8 @@ class RemoteArticlesDone extends RemoteArticleState {
   const RemoteArticlesDone(List<ArticleEntity> article)
       : super(articles: article);
 }
+
+class RemoteArticlesError extends RemoteArticleState {
+  // ignore: deprecated_member_use
+  const RemoteArticlesError(DioError error) : super(error: error);
+}
