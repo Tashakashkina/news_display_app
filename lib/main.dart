@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:news_display_app/config/theme/app_themes.dart';
+import 'package:news_display_app/features/presentation/pages/home/daily_news.dart';
+import 'package:news_display_app/injection_container.dart';
 
-void main() {
+Future<void> main() async {
+  await initializeDependencies();
   runApp(const MyApp());
 }
 
@@ -9,8 +13,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: 'Flutter Demo',
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: theme(),
+      home: const DailyNews(),
     );
   }
 }
