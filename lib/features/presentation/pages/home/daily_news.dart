@@ -9,12 +9,10 @@ class DailyNews extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(appBar: _buildAppbar(), body: _buildBody());
-  }
-
-  _buildAppbar() {
-    return AppBar(
-      title: const Text('Новости', style: TextStyle(color: Colors.black)),
+    return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.background,
+      appBar: AppBar(title: Text('Новости')),
+      body: _buildBody(),
     );
   }
 
