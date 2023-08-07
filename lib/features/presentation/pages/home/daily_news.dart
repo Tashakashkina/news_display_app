@@ -27,7 +27,9 @@ class DailyNews extends StatelessWidget {
         }
         if (state is RemoteArticlesDone) {
           return ListView.builder(itemBuilder: (context, index) {
-            return const ListTile();
+            return ListTile(
+              title: Text('$index'),
+            );
           });
         }
         return const Placeholder();
