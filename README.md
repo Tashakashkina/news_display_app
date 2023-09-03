@@ -1,4 +1,4 @@
-# news_display_app
+# 📰news_display_app
 
 A simple News App created using Flutter and Dart and using API from [OpenWeatherMap](https://newsapi.org/).
 
