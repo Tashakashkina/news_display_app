@@ -1,6 +1,6 @@
-# news_display_app
+# 📰news_display_app
 
-A new Flutter project.
+A simple News App created using Flutter and Dart and using API from [OpenWeatherMap](https://newsapi.org/).
 
 ## Getting Started
 
