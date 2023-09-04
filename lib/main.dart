@@ -9,6 +9,7 @@ import 'package:news_display_app/injection_container.dart';
 import 'config/theme/dark_theme.dart';
 
 Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   await initializeDependencies();
   runApp(const MyApp());
 }
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider<RemoteArticlesBloc>(
-      create: (context) => sl()..add(GetArticles()),
+      create: (context) => sl()..add(const GetArticles()),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: lightTheme,

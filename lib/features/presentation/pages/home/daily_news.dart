@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
+import 'package:news_display_app/features/presentation/widgets/article_tile.dart';
 import '../../bloc/article/remote/remote_article_bloc.dart';
 import '../../bloc/article/remote/remote_article_state.dart';
 
@@ -11,7 +11,7 @@ class DailyNews extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
-      appBar: AppBar(title: Text('Новости')),
+      appBar: AppBar(title: const Text('Новости')),
       body: _buildBody(),
     );
   }
@@ -26,11 +26,13 @@ class DailyNews extends StatelessWidget {
           return const Center(child: Icon(Icons.refresh));
         }
         if (state is RemoteArticlesDone) {
-          return ListView.builder(itemBuilder: (context, index) {
-            return ListTile(
-              title: Text('$index'),
-            );
-          });
+          return ListView.builder(
+            itemBuilder: (context, index) {
+              return ArticleWidget(
+                article: state.articles![index],
+              );
+            },
+          );
         }
         return const Placeholder();
       },
